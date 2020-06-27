@@ -2,7 +2,7 @@
 # Об окончании ввода данных свидетельствует пустая строка.
 
 line = None
-with open('text_1.txt', 'w') as file:
+with open('text_1.txt', 'w', encoding='utf-8') as file:
     while line != '':
         line = input('Введите данные: ')
         file.write(line + '\n')
