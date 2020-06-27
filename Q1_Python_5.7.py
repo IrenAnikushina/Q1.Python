@@ -22,7 +22,7 @@ average = 0
 with open('text_7.txt', 'r', encoding='utf-8') as firms:
     for line in firms:
         firm_data = line.split()
-        profit = int(firm_data[2]) - int(firm_data[3])
+        profit = float(firm_data[2]) - float(firm_data[3])
         if profit > 0:
             i += 1
             average = average + profit

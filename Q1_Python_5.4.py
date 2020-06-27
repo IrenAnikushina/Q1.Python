@@ -9,10 +9,10 @@
 
 from translate import Translator
 
-with open('text_4.txt', 'r') as en_num, open('text_4.2.0.txt', 'w', encoding='utf-8') as ru_num:
+with open('text_4.txt', 'r', encoding='utf-8') as en_num, open('text_4.2.0.txt', 'w', encoding='utf-8') as ru_num:
     for line in en_num:
         num = line.split()
         translator = Translator(to_lang="Russian")
         trans = translator.translate(num[0])
         print(trans, num[1], num[2], file=ru_num)
-#        print(trans, num[1], num[2])
+#       # print(trans, num[1], num[2])

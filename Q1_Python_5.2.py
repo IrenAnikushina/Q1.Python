@@ -3,7 +3,7 @@
 
 lines = 0
 words = 0
-with open('text_1.txt', 'r') as file:
+with open('text_1.txt', 'r', encoding='utf-8') as file:
     for line in file:
         if line != '\n':
             lines += 1
