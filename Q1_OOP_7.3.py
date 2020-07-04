@@ -15,7 +15,6 @@ class Cell:
 
     # Сложение. Объединение двух клеток.
     # При этом число ячеек общей клетки должно равняться сумме ячеек исходных двух клеток.
-
     def __add__(self, other):
         return Cell(self.nucleus + other.nucleus)
 
@@ -53,30 +52,30 @@ class Cell:
     Тогда метод make_order() вернет строку: *****\n*****\n*****.
     """
 
-    def make_order(self, row=5):
-        nucleus_str = "*" * self.nucleus
+    def make_order(self, line=5):
+        nucleus_code = '*' * self.nucleus
         start = 0
-        nucleus_str_arrange = ""
-        end = len(nucleus_str)
-        for el in range(1, end + 1, row):
-            nucleus_str_arrange += f"{(nucleus_str[start:row + start])}\n"
-            start += row
-        return nucleus_str_arrange
+        end = len(nucleus_code)
+        full_code = ''
+        for _ in range(1, end + 1, line):
+            full_code += f'{(nucleus_code[start:line + start])}\n'
+            start += line
+        return full_code
 
 
 my_cell_1 = Cell(12)
 my_cell_2 = Cell(6)
-print(f'Первая клетка\n{my_cell_1.nucleus}\n{my_cell_1.make_order()}')
-print(f'Вторая клетка\n{my_cell_2.nucleus}\n{my_cell_2.make_order()}')
+print(f'Первая клетка - {my_cell_1.nucleus} яч.\n{my_cell_1.make_order()}')
+print(f'Вторая клетка - {my_cell_2.nucleus} яч.\n{my_cell_2.make_order()}')
 
 my_cell_3 = my_cell_1 + my_cell_2
-print(f'Результат сложения\n{my_cell_3.nucleus}\n{my_cell_3.make_order()}')
+print(f'Результат сложения - {my_cell_3.nucleus} яч.\n{my_cell_3.make_order()}')
 
 my_cell_3 = my_cell_1 - my_cell_2
-print(f'Результат вычитания\n{my_cell_3.nucleus}\n{my_cell_3.make_order()}')
+print(f'Результат вычитания - {my_cell_3.nucleus} яч.\n{my_cell_3.make_order()}')
 
 my_cell_3 = my_cell_1 * my_cell_2
-print(f'Результат умножения\n{my_cell_3.nucleus}\n{my_cell_3.make_order()}')
+print(f'Результат умножения - {my_cell_3.nucleus} яч.\n{my_cell_3.make_order()}')
 
 my_cell_3 = my_cell_1 / my_cell_2
-print(f'Результат деления\n{my_cell_3.nucleus}\n{my_cell_3.make_order()}')
+print(f'Результат деления - {my_cell_3.nucleus} яч.\n{my_cell_3.make_order()}')
