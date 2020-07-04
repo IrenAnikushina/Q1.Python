@@ -39,6 +39,8 @@ class Suit(Clothes):
     def size(self, size):
         if size > 100:
             self.__size = size / 100
+            # Считаю, что размер должен считаться из роста в метрах, а не см, т.к. расход ткани 380 м на 185 см -
+            # это какой-то костюм на кита!
 
     @property
     def material_take_off(self):
