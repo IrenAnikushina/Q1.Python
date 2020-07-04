@@ -20,9 +20,8 @@ class Matrix:
 
     def __add__(self, other):
         try:
-            self.new_matrix = [[self.num[i][j] + other.num[i][j] for j in range(len(self.num[0]))] for i in
-                               range(len(self.num))]
-            return self.new_matrix
+            return Matrix([[self.num[i][j] + other.num[i][j] for j in range(len(self.num[0]))] for i in
+                           range(len(self.num))])
         except IndexError:
             print('Я не придумала, как обработать разноразмерные матрицы')
 
@@ -31,7 +30,7 @@ matrix_1 = Matrix([[1, 2], [3, 4], [5, 6]])
 matrix_2 = Matrix([[7, 8], [9, 10], [11, 12]])
 print(matrix_1)
 print(matrix_2)
-new_matrix = Matrix(matrix_1 + matrix_2)
+new_matrix = matrix_1 + matrix_2
 print(new_matrix)
 
 """
