@@ -33,12 +33,12 @@ class Suit(Clothes):
 
     @property
     def grade(self):
-        return self.size
+        return self.__size
 
     @grade.setter
     def grade(self, size):
-        if self.size > 100:
-            self.size = size / 100
+        if size > 100:
+            self.__size = size / 100
 
     @property
     def material_take_off(self):
@@ -46,7 +46,7 @@ class Suit(Clothes):
 
 
 my_coat = Coat(50)
-my_suit = Suit(1.75)
+my_suit = Suit(175)
 print(f'Расход ткани на пальто на размер {my_coat.size} - {my_coat.material_take_off} метров')
 print(f'Расход ткани на костюм на рост {my_suit.size} см - {my_suit.material_take_off} метров')
 print(f'Общий расход ткани - {Clothes.material_take_off(0)} метров')
